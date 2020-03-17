@@ -22,6 +22,7 @@ BuildRequires:  %{python3_vers}-devel
 BuildRequires:  %{python3_vers}-dballe
 Requires:       %{python3_vers}
 Requires:       %{python3_vers}-dballe
+Conflicts:      libsim < 6.4.3-4
 
 %description
 QC filter for generic BUFR data.
