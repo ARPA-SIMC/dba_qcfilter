@@ -19,6 +19,7 @@ class TestDbaQcfilterCli(unittest.TestCase):
                         for msg in msgs:
                             count += 1
 
+                # There's only one valid BUFR
                 self.assertEqual(count, 1)
 
     def test_preserve(self):
@@ -40,17 +41,21 @@ class TestDbaQcfilterCli(unittest.TestCase):
                                     for a in data["variable"].get_attrs()
                                 }
                                 if "B33007" in attrs:
+                                    # If B33007 is set, it must be the only one
                                     self.assertEqual(len(attrs.keys()), 1)
+                                    # If B33007 is set, its value must be 0
                                     self.assertEqual(attrs["B33007"], 0)
                                     invalid_count += 1
                                 else:
-                                    self.assertEqual(len(attrs.keys()), 0)
                                     valid_count += 1
 
                             count += 1
 
+                # All BUFR messages must be in the output file
                 self.assertEqual(count, 3)
+                # Two bufr messages are invalid
                 self.assertEqual(invalid_count, 2)
+                # There's only one valid BUFR
                 self.assertEqual(valid_count, 1)
 
 
