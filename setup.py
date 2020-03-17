@@ -22,7 +22,7 @@ setup(
     url='http://github.com/arpa-simc/dba_qcfilter',
     author='Emanuele Di Giacomo',
     author_email="edigiacomo@arpae.it",
-    #test_suite="runtests.runtests",
+    test_suite="tests.runtests",
     entry_points={
         "console_scripts": {
             "dba_qcfilter = dba_qcfilter.cli.main",

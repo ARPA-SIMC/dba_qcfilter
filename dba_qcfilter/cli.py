@@ -62,6 +62,7 @@ def main(input_file, output_file, preserve):
             for msg in msgs:
                 count_vars = 0
                 new_msg = dballe.Message("generic")
+
                 new_msg.set_named("year", msg.datetime.year)
                 new_msg.set_named("month", msg.datetime.month)
                 new_msg.set_named("day", msg.datetime.day)
@@ -69,9 +70,10 @@ def main(input_file, output_file, preserve):
                 new_msg.set_named("minute", msg.datetime.minute)
                 new_msg.set_named("second", msg.datetime.second)
                 new_msg.set_named("rep_memo", msg.report)
-                new_msg.set_named("ident", msg.ident)
                 new_msg.set_named("longitude", int(msg.coords[0] * 10 ** 5))
                 new_msg.set_named("latitude", int(msg.coords[1] * 10 ** 5))
+                if msg.ident:
+                    new_msg.set_named("ident", msg.ident)
 
                 for data in msg.query_data({"query": "attrs"}):
                     variable = data["variable"]
@@ -108,6 +110,8 @@ def main(input_file, output_file, preserve):
 
 
 if __name__ == "__main__":
+    from . import __version__
+
     parser = argparse.ArgumentParser(
         description="""Filter data using Quality Control information. Flag
         used are *B33192,*B33193,*B33194,*B33196. Station constant data are
