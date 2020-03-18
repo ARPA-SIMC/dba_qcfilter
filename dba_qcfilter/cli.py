@@ -56,7 +56,7 @@ def open_output(path=None):
             fp.close()
 
 
-def main(input_file, output_file, preserve):
+def do_qc(input_file, output_file, preserve):
     importer = dballe.Importer("BUFR")
     exporter = dballe.Exporter("BUFR")
 
@@ -110,7 +110,7 @@ def main(input_file, output_file, preserve):
                     output_file.write(exporter.to_binary(new_msg))
 
 
-if __name__ == "__main__":
+def main():
     from . import __version__
 
     parser = argparse.ArgumentParser(
@@ -145,4 +145,8 @@ if __name__ == "__main__":
 
     with open_input(args.input_file) as input_file:
         with open_output(args.output_file) as output_file:
-            main(input_file, output_file, args.preserve)
+            do_qc(input_file, output_file, args.preserve)
+
+
+if __name__ == "__main__":
+    main()

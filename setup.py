@@ -25,7 +25,7 @@ setup(
     test_suite="tests.runtests",
     entry_points={
         "console_scripts": {
-            "dba_qcfilter = dba_qcfilter.cli.main",
+            "dba_qcfilter = dba_qcfilter.cli:main",
         },
     },
     classifiers=[
