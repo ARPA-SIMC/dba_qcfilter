@@ -17,6 +17,11 @@ class TestDbaQcfilterCli(unittest.TestCase):
                     count = 0
                     for msgs in fp:
                         for msg in msgs:
+                            for data in msg.query_data():
+                                attrs = data["variable"].get_attrs()
+                                # Attributes are removed after QC
+                                self.assertEqual(len(attrs), 0)
+
                             count += 1
 
                 # There's only one valid BUFR
