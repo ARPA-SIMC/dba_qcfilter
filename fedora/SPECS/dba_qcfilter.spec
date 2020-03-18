@@ -2,7 +2,7 @@
 
 Name:           dba_qcfilter
 Version:        0.0.1
-Release:        1%{?dist}
+Release:        1
 Summary:        QC filter for generic BUFR data
 
 License:        GPLv2+
