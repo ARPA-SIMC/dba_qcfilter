@@ -52,5 +52,5 @@ QC filter for generic BUFR data.
 
 
 %changelog
-* Tue Mar 17 2020 Emanuele Di Giacomo <edigiacomo@arpae.it>
-- 
+* Wed Mar 18 2020 Emanuele Di Giacomo <edigiacomo@arpae.it> - 0.0.1-1
+- First release
