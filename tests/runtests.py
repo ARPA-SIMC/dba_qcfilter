@@ -9,7 +9,7 @@ class TestDbaQcfilterCli(unittest.TestCase):
     def test_not_preserve(self):
         with open("tests/001.bufr", "rb") as fpin:
             with io.BytesIO() as fpout:
-                dba_qcfilter.cli.main(fpin, fpout, False)
+                dba_qcfilter.cli.do_qc(fpin, fpout, False)
 
                 fpout.seek(0)
                 importer = dballe.Importer("BUFR")
@@ -30,7 +30,7 @@ class TestDbaQcfilterCli(unittest.TestCase):
     def test_preserve(self):
         with open("tests/001.bufr", "rb") as fpin:
             with io.BytesIO() as fpout:
-                dba_qcfilter.cli.main(fpin, fpout, True)
+                dba_qcfilter.cli.do_qc(fpin, fpout, True)
 
                 fpout.seek(0)
                 importer = dballe.Importer("BUFR")
