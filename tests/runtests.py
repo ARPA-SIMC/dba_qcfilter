@@ -47,6 +47,9 @@ class TestDbaQcfilterCli(unittest.TestCase):
                                     self.assertEqual(attrs["B33007"], 0)
                                     invalid_count += 1
                                 else:
+                                    # If B33007 is not set, then the attributes
+                                    # list must be empty
+                                    self.assertEqual(len(attrs.keys()), 0)
                                     valid_count += 1
 
                             count += 1

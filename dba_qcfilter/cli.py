@@ -8,12 +8,15 @@ import dballe
 def pass_qc(attrs):
     attrs_dict = {v.code: v.get() for v in attrs}
 
+    # Data already checked and checked as invalid by QC filter
     if attrs_dict.get("B33007", 100) == 0:
         return False
 
+    # Gross error check failed
     if attrs_dict.get("B33192", 100) == 0:
         return False
 
+    # Manual invalidation
     if attrs_dict.get("B33196", 100) == 1:
         return False
 
@@ -83,13 +86,11 @@ def main(input_file, output_file, preserve):
                         data["variable"].code, data["variable"].get()
                     )
 
-                    if preserve and not is_ok:
-                        v.seta(dballe.var("B33007", 0))
-                    elif is_ok:
-                        for a in attrs:
-                            v.seta(a)
-                    else:
-                        continue
+                    if not is_ok:
+                        if preserve:
+                            v.seta(dballe.var("B33007", 0))
+                        else:
+                            continue
 
                     new_msg.set(data["level"], data["trange"], v)
                     count_vars += 1
