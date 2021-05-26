@@ -47,6 +47,4 @@ then
     cp fedora/SPECS/dba_qcfilter.spec ~/rpmbuild/SPECS/dba_qcfilter.spec
     git archive --prefix=$pkgname/ --format=tar HEAD | gzip -c > ~/rpmbuild/SOURCES/$pkgname.tar.gz
     rpmbuild -ba --define "srcarchivename $pkgname" ~/rpmbuild/SPECS/dba_qcfilter.spec
-    find ~/rpmbuild/{RPMS,SRPMS}/ -name "*rpm" -exec cp -v {} . \;
-    # TODO upload ${pkgname}*.rpm to github release on deploy stage
 fi
