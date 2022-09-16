@@ -2,7 +2,7 @@ Source: dba-qcfilter
 Section: science
 Priority: extra
 Maintainer: Enrico Zini <enrico@enricozini.org>
-Build-Depends: debhelper (>= 12), python3-dballe
+Build-Depends: debhelper (>= 12), dh-python, python3-all, python3-setuptools, python3-dballe
 Standards-Version: 3.9.2
 Vcs-Svn: https://github.com/ARPA-SIMC/dba_qcfilter/
 
