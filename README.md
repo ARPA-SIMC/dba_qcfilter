@@ -1,7 +1,6 @@
 [![Build Status](https://simc.arpae.it/moncic-ci/dba_qcfilter/centos7.png)](https://simc.arpae.it/moncic-ci/dba_qcfilter/)
 [![Build Status](https://simc.arpae.it/moncic-ci/dba_qcfilter/centos8.png)](https://simc.arpae.it/moncic-ci/dba_qcfilter/)
-[![Build Status](https://simc.arpae.it/moncic-ci/dba_qcfilter/fedora32.png)](https://simc.arpae.it/moncic-ci/dba_qcfilter/)
-[![Build Status](https://simc.arpae.it/moncic-ci/dba_qcfilter/fedora34.png)](https://simc.arpae.it/moncic-ci/dba_qcfilter/)
+[![Build Status](https://simc.arpae.it/moncic-ci/dba_qcfilter/fedora36.png)](https://simc.arpae.it/moncic-ci/dba_qcfilter/)
 [![Build Status](https://copr.fedorainfracloud.org/coprs/simc/stable/package/dba_qcfilter/status_image/last_build.png)](https://copr.fedorainfracloud.org/coprs/simc/stable/package/dba_qcfilter/)
 
 # dba_qcfilter
