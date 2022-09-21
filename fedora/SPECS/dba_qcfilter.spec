@@ -19,6 +19,7 @@ BuildArch:      noarch
 %endif
 BuildRequires:  %{python3_vers}
 BuildRequires:  %{python3_vers}-devel
+BuildRequires:  %{python3_vers}-setuptools
 BuildRequires:  %{python3_vers}-dballe
 Requires:       %{python3_vers}
 Requires:       %{python3_vers}-dballe
