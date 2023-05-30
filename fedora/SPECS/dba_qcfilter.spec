@@ -1,8 +1,8 @@
 %{!?srcarchivename: %global srcarchivename %{name}-%{version}-%{release}}
 
 Name:           dba_qcfilter
-Version:        0.0.2
-Release:        2
+Version:        0.0.3
+Release:        1
 Summary:        QC filter for generic BUFR data
 
 License:        GPLv2+
@@ -53,6 +53,9 @@ QC filter for generic BUFR data.
 
 
 %changelog
+* Tue May 30 2023 Emanuele Di Giacomo <edigiacomo@arpae.it> - 0.0.3-1
+- Bump version to reflect upstream changes
+
 * Wed Sep 21 2022 Daniele Branchini <dbranchini@arpae.it> - 0.0.2-2
 - bogus release - rebuild on F36/python 3.10
 
