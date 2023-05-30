@@ -1,3 +1,9 @@
+dba-qcfilter (0.0.3-1) unstable; urgency=low
+
+  * Update to reflect upstream changes
+
+ -- Emanuele Di Giacomo <edigiacomo@arpae.it>  Tue, 30 May 2023 15:06:23 +0200
+
 dba-qcfilter (0.0.2-1) unstable; urgency=low
 
   * Initial release.
