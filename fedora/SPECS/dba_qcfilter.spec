@@ -1,7 +1,7 @@
 %{!?srcarchivename: %global srcarchivename %{name}-%{version}-%{release}}
 
 Name:           dba_qcfilter
-Version:        0.0.3
+Version:        0.1
 Release:        1
 Summary:        QC filter for generic BUFR data
 
@@ -53,6 +53,9 @@ QC filter for generic BUFR data.
 
 
 %changelog
+* Wed Mar 27 2024 Emanuele Di Giacomo <edigiacomo@arpae.it> - 0.1-1
+- Remove attributes involved in QC and keep the others (#1)
+
 * Tue May 30 2023 Emanuele Di Giacomo <edigiacomo@arpae.it> - 0.0.3-1
 - Bump version to reflect upstream changes
 
