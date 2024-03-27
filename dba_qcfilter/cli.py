@@ -8,17 +8,19 @@ import dballe
 def pass_qc(attrs):
     attrs_dict = {v.code: v.get() for v in attrs}
 
+    attrs_to_remove = ["B33192", "B33193", "B33194", "B33196"]
+
     # Data already checked and checked as invalid by QC filter
     if attrs_dict.get("B33007", 100) == 0:
-        return False
+        return False, attrs_to_remove
 
     # Gross error check failed
     if attrs_dict.get("B33192", 100) == 0:
-        return False
+        return False, attrs_to_remove
 
     # Manual invalidation
-    if attrs_dict.get("B33196", 100) == 1:
-        return False
+    if attrs_dict.get("B33196", 0) == 1:
+        return False, attrs_to_remove
 
     total_score = 0
 
@@ -33,7 +35,7 @@ def pass_qc(attrs):
             else:
                 total_score = total_score + gte_score
 
-    return total_score >= -1
+    return total_score >= -1, attrs_to_remove
 
 
 @contextlib.contextmanager
@@ -81,10 +83,15 @@ def do_qc(input_file, output_file, preserve):
                 for data in msg.query_data({"query": "attrs"}):
                     variable = data["variable"]
                     attrs = variable.get_attrs()
-                    is_ok = pass_qc(attrs)
+                    is_ok, attrs_to_remove = pass_qc(attrs)
+
                     v = dballe.var(
                         data["variable"].code, data["variable"].get()
                     )
+
+                    for a in attrs:
+                        if a.code not in attrs_to_remove:
+                            v.seta(a)
 
                     if not is_ok:
                         if preserve:
