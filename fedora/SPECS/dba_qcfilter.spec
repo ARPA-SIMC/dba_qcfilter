@@ -2,7 +2,7 @@
 
 Name:           dba_qcfilter
 Version:        0.1
-Release:        1
+Release:        2
 Summary:        QC filter for generic BUFR data
 
 License:        GPLv2+
@@ -53,6 +53,9 @@ QC filter for generic BUFR data.
 
 
 %changelog
+* Tue Oct  2 2024 Emanuele Di Giacomo <edigiacomo@arpae.it> - 0.1-2
+- Rebuild package for F40
+
 * Wed Mar 27 2024 Emanuele Di Giacomo <edigiacomo@arpae.it> - 0.1-1
 - Remove attributes involved in QC and keep the others (#1)
 
