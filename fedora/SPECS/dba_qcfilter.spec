@@ -41,7 +41,7 @@ QC filter for generic BUFR data.
 
 
 %check
-%{__python3} setup.py test
+%{__python3} tests/runtests.py
 
 
 %files
